@@ -19,3 +19,22 @@ header{
         margin-bottom: 4px;
     }
 }
+
+.search-box{
+    width: 100%;
+    border: solid 1px #000;
+    border-radius: 5px;
+    input[type="text"]{
+        padding: 10px 0;
+        width: 100%;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+    }
+}
+
+.search-icon{
+    margin-top: 10px;
+    margin-left: 10px;
+    color: $color-secondary;
+}
