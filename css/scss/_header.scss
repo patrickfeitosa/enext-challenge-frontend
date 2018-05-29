@@ -34,7 +34,15 @@ header{
 }
 
 .search-icon{
+    display: block;
     margin-top: 10px;
     margin-left: 10px;
     color: $color-secondary;
+}
+
+.shipping-info{
+    @include type-subtitle($color-secondary, 21px);
+    &-price{        
+        @include type-subtitle($color-secondary, 16px);
+    }
 }

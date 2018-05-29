@@ -2,4 +2,40 @@
     @include type-menu($color-text);
     background-color: $color-main;
     padding: 10px 0;
+    
+    ul{
+        list-style: none;
+        li{
+            display: inline-block;
+            padding: 15px 10px;
+            a{
+                color:white;
+                text-decoration: none;
+                padding: 15px 10px;
+
+                &::after{
+                    content:' ▼';
+                    font-size: 12px;
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+}
+
+.btn{
+    background-color: #422a53;
+    border-radius: 5px;                
+    &::after{
+        content:'' !important;
+    }
+}
+
+.sign-in{
+    padding: 15px 0;
+    margin: 0 10px;
+    text-align: center;
+    span{
+        color: #8683bb;
+    }
 }
