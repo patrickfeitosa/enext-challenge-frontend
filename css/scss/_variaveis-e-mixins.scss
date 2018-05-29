@@ -20,6 +20,12 @@ $color-detail: #b9b9b9;
     font-style: italic;
 }
 
+@mixin type-2($color, $size){
+    font-family: 'Oswald', sans-serif;
+    color: $color;
+    font-size: $size;
+}
+
 @mixin type-menu($color){
     font-family: 'Roboto Slab', serif;
     color: $color;

@@ -46,3 +46,11 @@ header{
         @include type-subtitle($color-secondary, 16px);
     }
 }
+
+.bag-info{    
+    margin-top: 5px;
+    @include type-2($color-detail, 24px);
+    &-qtd{
+        color: $color-secondary;
+    }
+}
