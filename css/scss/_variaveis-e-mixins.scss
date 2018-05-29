@@ -1,6 +1,36 @@
 //Cores
+$color-main: #523468;
+$color-secondary: #d73a1e;
+$color-text: #ffffff;
+$color-footer-bg: #e6e6e6;  
+$color-footer-copyright: #7a7676;
+$color-detail: #b9b9b9;
 
 //Tipografia
+@mixin type-header-logo($color){
+    font-family: 'Oswald', sans-serif;
+    color: $color;
+    font-size: 36px;
+}
+
+@mixin type-subtitle($color, $size){
+    font-family: 'Laila', serif;
+    color: $color;
+    font-size: $size;
+    font-style: italic;
+}
+
+@mixin type-menu($color){
+    font-family: 'Roboto Slab', serif;
+    color: $color;
+    font-size: 16px;
+    font-style: italic;
+}
+
+@mixin type-light(){
+    font-weight: 300;
+}
+
 
 // Variáveis do Grid
 $cols: 12;

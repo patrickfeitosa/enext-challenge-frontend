@@ -1,0 +1,5 @@
+.menu{
+    @include type-menu($color-text);
+    background-color: $color-main;
+    padding: 10px 0;
+}

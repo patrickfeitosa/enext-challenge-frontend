@@ -1,0 +1,1 @@
+"use strict";var onReady=function(){fetch("http://localhost:3000/json/potions.json").then(function(o){return o.json()}).then(function(o){console.log(o)}).catch(function(o){console.error("Erro ao recuperar os dados do JSON",o)})};"loading"!==document.readyState&&onReady(),document.addEventListener("DOMContentLoaded",onReady);

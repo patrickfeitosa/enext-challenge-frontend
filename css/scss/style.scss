@@ -1,9 +1,13 @@
 // Importando estilos no SASS
 @import 'variaveis-e-mixins';
+@import 'reset';
 
 // Gerais
+@import 'gerais';
 @import 'grid';
 
 // Páginas
+@import 'header';
+@import 'menu';
 
 // Responsivo

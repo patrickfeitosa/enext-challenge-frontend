@@ -1,0 +1,21 @@
+header{
+    padding: 20px 0 30px 0;
+}
+
+.logo{
+    @include type-header-logo($color-secondary);
+}
+
+.subtitle{
+    margin-top: 5px;
+    @include type-subtitle($color-main, 16px);
+    
+    &::after, &::before{
+        content: '';
+        display: inline-block;
+        background-color: $color-detail;
+        height: 1px;
+        width: 24px;
+        margin-bottom: 4px;
+    }
+}
