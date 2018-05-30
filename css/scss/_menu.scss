@@ -39,3 +39,28 @@
         color: #8683bb;
     }
 }
+
+@include device(sm){
+    .mobile-btn {
+        display: block;
+        color: $color-main;
+        width: 36px;
+        height: 36px;
+        border-top: 4px solid;
+        margin: 10px auto;
+        float: left;
+        position: relative;
+        cursor: pointer;
+        -webkit-backface-visibility: hidden;
+    }
+    
+    .mobile-btn::after, .mobile-btn::before {
+        content: '';
+        display: block;
+        height: 4px;
+        margin-top: 6px;
+        background: currentColor;
+        position: relative;
+        transition: transform .2s ease;
+    }
+}

@@ -20,8 +20,20 @@
 
 //Gerando as classes de Grid
 @for $i from 1 through $cols{
-    .grid-#{$i} {
-        width: grid($i);
+    @include device(lg){
+        .grid-lg-#{$i} {
+            width: grid($i);
+        }
+    }
+    @include device(md){
+        .grid-md-#{$i} {
+            width: grid($i);
+        }
+    }
+    @include device(sm){
+        .grid-sm-#{$i} {
+            width: grid($i);
+        }
     }
 } 
 
