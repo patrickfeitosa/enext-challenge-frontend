@@ -85,14 +85,14 @@ $sm-device: 480px;
     max-width: $lg-device;
     margin: 0 auto;
     position: relative;
-    @include device(md){
+    /*@include device(md){
         max-width: $md-device;
     }
     @include device(sm){
         max-width: $sm-device;
         padding-left: 10px;
         padding-right: 10px;
-    }
+    }*/
 
     @include clearfix;
 }

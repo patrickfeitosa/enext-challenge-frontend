@@ -8,15 +8,23 @@
         li{
             display: inline-block;
             padding: 15px 10px;
+            @include device(sm){
+                display: block;
+                border-bottom: solid 1px #c6bed7;
+            }
             a{
                 color:white;
                 text-decoration: none;
                 padding: 15px 10px;
-
-                &::after{
-                    content:' ▼';
-                    font-size: 12px;
-                    margin-left: 5px;
+                @include device(lg){                    
+                    &::after{
+                        content:' ▼';
+                        font-size: 12px;
+                        margin-left: 5px;
+                    }
+                }
+                @include device(sm){
+                    width: 100%;
                 }
             }
         }
@@ -47,7 +55,7 @@
         width: 36px;
         height: 36px;
         border-top: 4px solid;
-        margin: 10px auto;
+        margin: 15px 15px;
         float: left;
         position: relative;
         cursor: pointer;
