@@ -52,13 +52,7 @@ $sm-device: 480px;
     float: left;
     min-height: 1px;
     margin-left: $gutter / 2; 
-    margin-right: $gutter / 2; 
-    @include device(sm){
-        width: 100% !important;
-        float: none;
-        margin-right: 0px;
-        margin-left: 0px;
-    }
+    margin-right: $gutter / 2;
 }
 
 // Mixin de media-queries
@@ -91,14 +85,14 @@ $sm-device: 480px;
     max-width: $lg-device;
     margin: 0 auto;
     position: relative;
-    @include device(md){
+    /*@include device(md){
         max-width: $md-device;
     }
     @include device(sm){
         max-width: $sm-device;
         padding-left: 10px;
         padding-right: 10px;
-    }
+    }*/
 
     @include clearfix;
 }

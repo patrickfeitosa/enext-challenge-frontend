@@ -1,3 +1,21 @@
 .text-light{
     @include type-light;
 }
+
+@include device(sm){
+    .d-sm-none{
+        display: none !important;
+    }
+}
+
+@include device(md){
+    .d-md-none{
+        display: none !important;
+    }
+}
+
+@include device(lg){
+    .d-lg-none{
+        display: none !important;
+    }
+}

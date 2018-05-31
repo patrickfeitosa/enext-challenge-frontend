@@ -20,13 +20,30 @@
 
 //Gerando as classes de Grid
 @for $i from 1 through $cols{
-    .grid-#{$i} {
-        width: grid($i);
+    @include device(lg){
+        .grid-lg-#{$i} {
+            width: grid($i);
+        }
+    }
+    @include device(md){
+        .grid-md-#{$i} {
+            width: grid($i);
+        }
+    }
+    @include device(sm){
+        .grid-sm-#{$i} {
+            width: grid($i);
+        }
     }
 } 
 
 [class^="grid-"]{
     @include grid-structure;
+}
+
+[class="grid-sm-6"]{
+    margin-left: 0;
+    margin-right: 0;
 }
 
 //Gerando as classes de Offset
@@ -51,7 +68,9 @@
     @include row;
 }
 
-.no-gutter{
-    margin-left: 0px !important; 
-    margin-right: 0px !important;
+@include device(sm){
+    .no-gutter{
+        margin-left: 0px !important; 
+        margin-right: 0px !important;
+    }
 }

@@ -28,42 +28,41 @@
 	</head>
 	<body>
 		<header class="container">
-			<div class="grid-3 logo">
+			<div class="grid-sm-1">
+				<span class="mobile-btn" id="mobile-btn"> </span>
+			</div>
+			<div class="grid-lg-3 grid-sm-7 logo">
 				<div class="row">
-					<div class="grid-12">
+					<div class="grid-lg-12 grid-sm-12 ">
 						MERLIN'S <span class="text-light">POTION</span> 
 					</div>
 				</div>
 				<div class="row">
-					<div class="grid-12 subtitle">
+					<div class="grid-lg-12 grid-sm-12 subtitle">
 						fine potions since 1026
 					</div>			
 				</div>					
 			</div>
 
-			<div class="grid-3">
+			<div id="search-box" class="grid-lg-3 grid-sm-9 d-sm-none">
 				<div class="search-box">
 					<div class="row">
-						<div class="grid-1">
+						<div class="grid-lg-1">
 							<i class="material-icons search-icon">search</i>
 						</div>
-						<div class="grid-9">
+						<div class="grid-lg-9">
 							<input type="text" placeholder="Search our stock">
 						</div>
 					</div>
 				</div>
 			</div>
 
-			<div class="grid-2 offset-1 shipping-info">
+			<div class="grid-lg-2 offset-1 shipping-info d-sm-none">
 				Free shipping <br>
 				<span class="shipping-info-price">on orders over $50</span>
 			</div>
 
-			<div class="grid-1">
-				ICONE CALDEIRÃO
-			</div>
-
-			<div class="grid-1">
+			<div class="grid-lg-1 grid-sm-2">
 				<div class="bag-info">
 					BAG: <span class="bag-info-qtd">1</span>
 				</div>	
@@ -71,9 +70,12 @@
 			
 		</header>
 
-		<nav class="menu">
+		<div id="shipping-id" class="shipping-info grid-12-sm d-lg-none">
+			Free shipping on orders over $50
+		</div>
+		<nav class="menu d-sm-none">
 			<div class="container">
-				<ul class="grid-8">
+				<ul class="grid-lg-8 grid-sm-12">
 					<li><a href="#">Potions</a></li>
 					<li><a href="#">Ingridients</a></li>
 					<li><a href="#">Books</a></li>
@@ -81,10 +83,61 @@
 					<li><a href="#">Charms</a></li>
 					<li><a href="#" class="btn">Clearance</a></li>
 				</ul>
-				<div class="grid-3 sign-in">
+				<div class="grid-lg-3 grid-sm-12 sign-in">
 					Sign in <span>or</span> Sign up
 				</div>
 			</div>
 		</nav>
+
+		<div class="container">
+			<div class="grid-lg-12 grid-md-12 grid-sm-12">
+				<h1 class="title">Potions</h1>
+			</div>
+			
+			<div class="grid-lg-3 grid-md-3 grid-sm-6 product-info">
+				<div class="row">
+					<div class="grid-lg-12 grid-md-12 grid-sm-12 no-gutter">
+						<img src="img/products/aging-potion.png" alt="Aging Potion" class="img-product">
+					</div>
+					<div class="grid-lg-12 grid-md-12 grid-sm-12 price-info no-gutter">
+						Aging Potion - <span class="price">$29.99</span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="grid-lg-3 grid-md-3 grid-sm-6 offset-1 product-info">
+				<div class="row">
+					<div class="grid-lg-12 grid-md-12 grid-sm-12 no-gutter">
+						<img src="img/products/aging-potion.png" alt="Aging Potion" class="img-product">
+					</div>
+					<div class="grid-lg-12 grid-md-12 grid-sm-12 price-info no-gutter">
+						Aging Potion - <span class="price">$29.99</span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="grid-lg-3 grid-md-3 grid-sm-6 offset-1  product-info">
+				<div class="row">
+					<div class="grid-lg-12 grid-md-12 grid-sm-12 no-gutter">
+						<img src="img/products/aging-potion.png" alt="Aging Potion" class="img-product">
+					</div>
+					<div class="grid-lg-12 grid-md-12 grid-sm-12 price-info no-gutter">
+						Aging Potion - <span class="price">$29.99</span>
+					</div>
+				</div>
+			</div>
+			
+			<div class="grid-lg-3 grid-md-3 grid-sm-6 product-info">
+				<div class="row">
+					<div class="grid-lg-12 grid-md-12 grid-sm-12 no-gutter">
+						<img src="img/products/aging-potion.png" alt="Aging Potion" class="img-product">
+					</div>
+					<div class="grid-lg-12 grid-md-12 grid-sm-12 price-info no-gutter">
+						Aging Potion - <span class="price">$29.99</span>
+					</div>
+				</div>
+			</div>
+						
+		</div>
 	</body>
 </html>

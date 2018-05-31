@@ -2,21 +2,33 @@
     @include type-menu($color-text);
     background-color: $color-main;
     padding: 10px 0;
+
+    @include device(sm){
+        margin-left: -10px;
+    }
     
     ul{
         list-style: none;
         li{
             display: inline-block;
             padding: 15px 10px;
+            @include device(sm){
+                display: block;
+                border-bottom: solid 1px #c6bed7;
+            }
             a{
                 color:white;
                 text-decoration: none;
                 padding: 15px 10px;
-
-                &::after{
-                    content:' ▼';
-                    font-size: 12px;
-                    margin-left: 5px;
+                @include device(lg){                    
+                    &::after{
+                        content:' ▼';
+                        font-size: 12px;
+                        margin-left: 5px;
+                    }
+                }
+                @include device(sm){
+                    width: 100%;
                 }
             }
         }
@@ -37,5 +49,46 @@
     text-align: center;
     span{
         color: #8683bb;
+    }
+}
+
+@include device(sm){
+    .mobile-btn {
+        display: block;
+        color: $color-main;
+        width: 36px;
+        height: 36px;
+        border-top: 4px solid;
+        margin: 15px 15px;
+        float: left;
+        position: relative;
+        cursor: pointer;
+        -webkit-backface-visibility: hidden;
+    
+        &::after, &::before {
+            content: '';
+            display: block;
+            height: 4px;
+            margin-top: 6px;
+            background: currentColor;
+            position: relative;
+            transition: transform .2s ease;
+        }
+
+        &.active {
+            border-top-color: transparent;
+        }
+
+        &.active::after {
+            margin-top: 0px;
+            top: 2px;
+            transform: rotate(45deg);
+        }
+    
+        &.active::before {
+            margin-top: 0px;
+            top: 6px;
+            transform: rotate(135deg);
+        }
     }
 }

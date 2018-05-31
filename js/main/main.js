@@ -8,11 +8,31 @@ let onReady = function(){
 		.catch(err => {
 			// trata se alguma das promises falhar
 			console.error('Erro ao recuperar os dados do JSON', err);
-		});
+		})
+
+	let btnMobile = document.querySelector('#mobile-btn')
+	btnMobile.addEventListener('click', () =>{
+		enableMenu('.menu')
+	})
 }
 
 if(document.readyState !== 'loading'){
-    onReady()
+	onReady()
+
 } 
 
 document.addEventListener('DOMContentLoaded', onReady )
+
+let enableMenu = function(targetClick){
+	let menu = document.querySelector(targetClick)
+	let searchBox = document.querySelector('#search-box')
+	let logo = document.querySelector('.logo')
+	let bag = document.querySelector('.bag-info')
+	let shippingInfo = document.querySelector('#shipping-id')
+
+	menu.classList.toggle('d-sm-none')
+	searchBox.classList.toggle('d-sm-none')
+	logo.classList.toggle('d-sm-none')
+	bag.classList.toggle('d-sm-none')
+	shippingInfo.classList.toggle('d-sm-none')
+}

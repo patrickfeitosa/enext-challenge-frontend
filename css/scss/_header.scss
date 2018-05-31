@@ -1,9 +1,15 @@
 header{
     padding: 20px 0 30px 0;
+    @include device(sm){        
+        padding: 20px 0 10px 0;
+    }
 }
 
 .logo{
     @include type-header-logo($color-secondary);
+    @include device(sm){
+        text-align: center;
+    }
 }
 
 .subtitle{
@@ -18,6 +24,10 @@ header{
         width: 24px;
         margin-bottom: 4px;
     }
+
+    @include device(sm){
+        text-align: center;
+    }
 }
 
 .search-box{
@@ -30,6 +40,11 @@ header{
         border: none;
         border-radius: 5px;
         font-size: 16px;
+    }
+
+    @include device(sm){
+        margin-top: 5px;
+        margin-left: 15px;
     }
 }
 
@@ -45,9 +60,17 @@ header{
     &-price{        
         @include type-subtitle($color-secondary, 16px);
     }
+
+    @include device(sm){
+        padding: 10px 0;
+        text-align: center;
+        background-color: $color-footer-bg;
+        @include type-subtitle($color-footer-copyright, 18px);
+    }
 }
 
 .bag-info{    
+    text-align: center;
     margin-top: 5px;
     @include type-2($color-detail, 24px);
     &-qtd{
