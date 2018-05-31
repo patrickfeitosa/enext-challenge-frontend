@@ -64,6 +64,7 @@
         position: relative;
         cursor: pointer;
         -webkit-backface-visibility: hidden;
+<<<<<<< HEAD
     
         &::after, &::before {
             content: '';
@@ -90,5 +91,17 @@
             top: 6px;
             transform: rotate(135deg);
         }
+=======
+    }
+    
+    .mobile-btn::after, .mobile-btn::before {
+        content: '';
+        display: block;
+        height: 4px;
+        margin-top: 6px;
+        background: currentColor;
+        position: relative;
+        transition: transform .2s ease;
+>>>>>>> 5e97851e7bd6602a24669571cfc93632ac935291
     }
 }
