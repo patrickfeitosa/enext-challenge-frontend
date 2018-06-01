@@ -3,7 +3,18 @@ let onReady = function(){
 	fetch(url)
 		.then(response => response.json()) // retorna uma promise
 		.then(result => {
-			console.log(result.potions.length)		
+
+			//Transformando o result em um Array
+			let potions = Object.keys(result.potions).map(key => result.potions[key]) ;
+
+			loadContentOnDOM(potions);
+
+			//Realizando o loop por cada objeto do Array
+			potions.forEach(potion =>{
+				potion.ingredients.forEach(ingridient =>{
+					console.log(ingridient)
+				})
+			})
 		})
 		.catch(err => {
 			// trata se alguma das promises falhar
@@ -27,10 +38,29 @@ document.addEventListener('DOMContentLoaded', onReady )
 
 //DOM Functions
 
+/**
+ * 
+ * @param {array} object recebe o objeto com os dados para colocar na DOM 
+ */
+let loadContentOnDOM = function (object){
+
+}
+
+
+/**
+ * 
+ * @param {HTMLElement} element Target que se realiza a troca de classe 
+ * @param {string} className Classe que sera realizado a troca de acordo com a condição se tem ou não a classe
+ */
 let toggleClass = function(element, className){
 	element.classList.toggle(className)
 }
 
+
+/**
+ * 
+ * @param {HTMLElement} targetClick Especifica qual botão é responsável pelo Menu mobile
+ */
 let enableMenu = function(targetClick){
 	let menu = document.querySelector(targetClick)
 	menu.classList.toggle('d-sm-none')
@@ -41,6 +71,8 @@ let enableMenu = function(targetClick){
 	})
 }
 
+
+/** Responsável por habilitar o Lightbox na DOM */
 let enableClickLightbox = function (){	
 	let images = document.querySelectorAll('.img-product')
 	Array.from(images).forEach(image =>{
@@ -54,6 +86,10 @@ let enableClickLightbox = function (){
 	})
 }
 
+/**
+ * 
+ * @param {number} id especifica qual objeto deve ser carregado no lightbox
+ */
 let openLightbox = function(id){
 	let lightbox = document.querySelector('.lightbox')
 	let closeButton = document.querySelector('.close-lightbox')
@@ -64,6 +100,11 @@ let openLightbox = function(id){
 	})
 }
 
+
+/**
+ * 
+ * @param {HTMLElement} container fecha o lightbox
+ */
 let closeLightbox = function(container){
 	container.style.display = "none";
 }
