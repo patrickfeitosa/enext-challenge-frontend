@@ -55,5 +55,15 @@ let enableClickLightbox = function (){
 }
 
 let openLightbox = function(id){
-	alert(id)
+	let lightbox = document.querySelector('.lightbox')
+	let closeButton = document.querySelector('.close-lightbox')
+
+	lightbox.style.display = "block";
+	closeButton.addEventListener('click', () =>{
+		closeLightbox(lightbox)
+	})
+}
+
+let closeLightbox = function(container){
+	container.style.display = "none";
 }
