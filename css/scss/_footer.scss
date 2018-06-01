@@ -1,0 +1,72 @@
+footer{
+    padding: 40px 0;
+    background-color: $color-footer-bg;
+}
+
+.footer{
+    &-options{
+        li{
+            padding-right: 50px;
+            display: inline-block;
+            @include type-2($color-secondary, 20px);
+            @include type-light;
+        }
+
+        @include device(sm){
+            margin-bottom: 20px;
+        }
+    }
+
+    &-social-midia{
+        margin-top: 50px;
+        li{
+            padding-right: 40px;
+            display: inline-block;
+            border-radius: 50%;
+            @include type-2($color-main, 35px);
+            @include type-light;
+        }
+
+        @include device(sm){
+            margin: 0 auto;
+        }
+    }
+}
+
+.newsletter{
+    width: 100%;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 30px;
+    @include type-2(#000, 18px);
+    @include type-light;
+    h2{
+        margin-bottom: 20px;
+        @include type-2(#000, 22px);
+    }
+
+    input[type="text"]{
+        border: solid 1px #000;
+        border-radius: 5px;
+        padding: 5px;
+        @include type-2(#000, 18px);
+    }
+
+    p{
+        margin-bottom: 30px;
+        @include type-2(#000, 18px);
+    }
+
+    button{
+        padding: 5px;
+        color: white;
+        background-color: $color-secondary;
+        border: solid 1px $color-secondary;
+        border-radius: 5px;
+        @include type-2(#fff, 18px);
+    }
+}
+.copyright{    
+    @include type-2($color-footer-copyright, 18px);
+    @include type-light;
+}
