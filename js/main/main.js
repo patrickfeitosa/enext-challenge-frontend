@@ -3,7 +3,7 @@ let onReady = function(){
 	fetch(url)
 		.then(response => response.json()) // retorna uma promise
 		.then(result => {
-			console.log(result)
+			console.log(result.potions.length)		
 		})
 		.catch(err => {
 			// trata se alguma das promises falhar
@@ -11,8 +11,9 @@ let onReady = function(){
 		})
 
 	let btnMobile = document.querySelector('#mobile-btn')
-	btnMobile.addEventListener('click', () =>{
+	btnMobile.addEventListener('click', (e) =>{
 		enableMenu('.menu')
+		toggleClass(btnMobile, 'active')
 	})
 }
 
@@ -23,16 +24,18 @@ if(document.readyState !== 'loading'){
 
 document.addEventListener('DOMContentLoaded', onReady )
 
+//DOM Functions
+
+let toggleClass = function(element, className){
+	element.classList.toggle(className)
+}
+
 let enableMenu = function(targetClick){
 	let menu = document.querySelector(targetClick)
-	let searchBox = document.querySelector('#search-box')
-	let logo = document.querySelector('.logo')
-	let bag = document.querySelector('.bag-info')
-	let shippingInfo = document.querySelector('#shipping-id')
-
 	menu.classList.toggle('d-sm-none')
-	searchBox.classList.toggle('d-sm-none')
-	logo.classList.toggle('d-sm-none')
-	bag.classList.toggle('d-sm-none')
-	shippingInfo.classList.toggle('d-sm-none')
+
+	let targets = document.querySelectorAll('.toggle-target')
+	Array.from(targets).forEach(target => {
+		toggleClass(target, 'd-sm-none')
+	})
 }

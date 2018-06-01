@@ -116,3 +116,13 @@ $sm-device: 480px;
             box-shadow: inset 0px 400px 200px$color;
     
 }
+
+@mixin button{
+    .btn{
+        background-color: #422a53;
+        border-radius: 5px;                
+        &::after{
+            content:'' !important;
+        }
+    }
+}

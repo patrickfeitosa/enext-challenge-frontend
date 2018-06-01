@@ -1,6 +1,10 @@
 footer{
     padding: 40px 0;
     background-color: $color-footer-bg;
+
+    @include device(sm){
+        padding-top:20px;
+    }
 }
 
 .footer{
@@ -9,7 +13,7 @@ footer{
             padding-right: 50px;
             display: inline-block;
             @include type-2($color-secondary, 20px);
-            @include type-light;
+            letter-spacing: 3px;
         }
 
         @include device(sm){
@@ -20,15 +24,31 @@ footer{
     &-social-midia{
         margin-top: 50px;
         li{
-            padding-right: 40px;
+            padding: 0;
             display: inline-block;
-            border-radius: 50%;
-            @include type-2($color-main, 35px);
-            @include type-light;
+            @include type-2($color-main, 45px);
+            margin-right: 30px;
+            overflow: hidden;
+
+            @include device(sm){
+                margin-right: calc(92% / 20);
+                margin-left: calc(92% / 20);
+            }
+            i{
+                width: 40px;
+                height: 40px;
+                margin: 0 auto;
+                border-radius: 50%;
+                line-height: 40px;
+                text-align: center;
+                overflow: hidden;
+            }
         }
 
         @include device(sm){
+            padding-top: 40px;
             margin: 0 auto;
+            width: 92%;
         }
     }
 }
@@ -83,5 +103,6 @@ footer{
     @include device(sm){
         margin: 20px 0;
         text-align: center;
+        @include type-2($color-footer-copyright, 22px);
     }
 }

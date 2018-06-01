@@ -15,6 +15,11 @@
             @include device(sm){
                 display: block;
                 border-bottom: solid 1px #c6bed7;
+                
+                &:last-child{
+                    background-color: #422a53;
+                    border: solid 1px #422a53;
+                }
             }
             a{
                 color:white;
@@ -27,20 +32,17 @@
                         margin-left: 5px;
                     }
                 }
-                @include device(sm){
-                    width: 100%;
-                }
             }
         }
     }
 }
 
-.btn{
-    background-color: #422a53;
-    border-radius: 5px;                
-    &::after{
-        content:'' !important;
-    }
+@include device(lg){
+    @include button 
+}
+
+@include device(md){
+    @include button
 }
 
 .sign-in{
