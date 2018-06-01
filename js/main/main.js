@@ -15,11 +15,12 @@ let onReady = function(){
 		enableMenu('.menu')
 		toggleClass(btnMobile, 'active')
 	})
+
+	enableClickLightbox()
 }
 
 if(document.readyState !== 'loading'){
 	onReady()
-
 } 
 
 document.addEventListener('DOMContentLoaded', onReady )
@@ -38,4 +39,21 @@ let enableMenu = function(targetClick){
 	Array.from(targets).forEach(target => {
 		toggleClass(target, 'd-sm-none')
 	})
+}
+
+let enableClickLightbox = function (){	
+	let images = document.querySelectorAll('.img-product')
+	Array.from(images).forEach(image =>{
+		let idPotion = 2
+
+		image.style.cursor = 'pointer'
+		image.setAttribute('id', 'teste')
+		image.addEventListener('click', img =>{
+			openLightbox(idPotion)
+		})
+	})
+}
+
+let openLightbox = function(id){
+	alert(id)
 }
