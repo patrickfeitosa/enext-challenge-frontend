@@ -20,7 +20,31 @@
 	z-index: 1002;
 	overflow: auto;
 	display: block;
-	max-height:520px;
+    max-height:520px;
+
+    p{
+        @include type-3(#000, 20px);
+        padding: 10px 0;
+        font-weight: bold;
+    }
+
+    .use-effect-desc{
+        @include type-3(#000, 18px);
+        font-weight: 400;
+    }
+
+    ul li{
+        @include type-3(#000, 18px);
+    }
+
+    .price{
+        color: $color-secondary;
+        padding-bottom: 30px;
+        padding-top: 0;
+        &-title{
+            padding: 0;
+        }
+    }
 }
 
 .close-lightbox{
@@ -54,4 +78,12 @@
         top: 3px;
         transform: rotate(135deg);
     }
+}
+
+button{
+    padding: 5px 20px;
+    background-color: $color-secondary !important;
+    border: solid 1px $color-secondary;
+    border-radius: 5px;
+    @include type-2(#fff, 18px);
 }

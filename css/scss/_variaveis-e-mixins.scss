@@ -26,8 +26,14 @@ $color-detail: #b9b9b9;
     font-size: $size;
 }
 
+@mixin type-3($color, $size){
+    font-family: 'Laila', serif;
+    color: $color;
+    font-size: $size;
+}
+
 @mixin type-menu($color){
-    font-family: 'Roboto Slab', serif;
+    font-family: 'Laila', serif;
     color: $color;
     font-size: 18px;
     font-style: italic;
