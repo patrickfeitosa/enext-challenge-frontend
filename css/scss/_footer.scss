@@ -65,8 +65,23 @@ footer{
         border-radius: 5px;
         @include type-2(#fff, 18px);
     }
+
+    @include device(sm){
+        width: 92%;
+        margin: 0 auto;
+        border-radius: 0;
+
+        .no-left{
+            margin-left: 0 !important;
+        }
+    }
 }
 .copyright{    
     @include type-2($color-footer-copyright, 18px);
     @include type-light;
+
+    @include device(sm){
+        margin: 20px 0;
+        text-align: center;
+    }
 }
