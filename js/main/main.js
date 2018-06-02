@@ -128,7 +128,7 @@ let openLightbox = function(id){
 		'<p class="title-potion">' + potion.name + '</p>'+
 		'<p class="use-effect">Use/Effect:</p>'+
 		'<p class="use-effect-desc">' + potion.effect+'</p>'+
-		'<p class="ingredients">Ingredients:</p>'
+		'<p class="ingredients">Ingredients:</p>'+
 		'<ul>'
 			potion.ingredients.forEach(ingridient =>{htmlModalContent += '<li>' + ingridient + '</li>'})
 		htmlModalContent+=
