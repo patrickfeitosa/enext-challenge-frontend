@@ -5,16 +5,17 @@ let onReady = function(){
 		.then(result => {
 
 			//Transformando o result em um Array
-			let potions = Object.keys(result.potions).map(key => result.potions[key]) ;
+			let potions = Object.keys(result.potions).map(key => result.potions[key])
 
-			loadContentOnDOM(potions);
+			const target = document.querySelector('#content')
+			target.innerHTML = loadContentOnDOM(potions)
 
-			//Realizando o loop por cada objeto do Array
+			/*Realizando o loop por cada objeto do Array
 			potions.forEach(potion =>{
 				potion.ingredients.forEach(ingridient =>{
 					console.log(ingridient)
 				})
-			})
+			})*/
 		})
 		.catch(err => {
 			// trata se alguma das promises falhar
@@ -41,9 +42,31 @@ document.addEventListener('DOMContentLoaded', onReady )
 /**
  * 
  * @param {array} object recebe o objeto com os dados para colocar na DOM 
+ * @returns {HTMLElement}
  */
 let loadContentOnDOM = function (object){
+	let htmlContent = ''
+	let i = 0
+	object.forEach(obj =>{
 
+		htmlContent += i % 3 === 0 ? 
+		'<div class="grid-lg-3 grid-md-3 grid-sm-6 product-info">' : '<div class="grid-lg-3 grid-md-3 grid-sm-6 offset-1 product-info">'
+			
+		htmlContent+=
+			'<div class="row">'+
+				'<div class="grid-lg-12 grid-md-12 grid-sm-12 no-gutter">'+
+					'<img src="img/products/' + obj.image + '" alt="'+ obj.name +'" class="img-product">'+
+				'</div>'+
+				'<div class="grid-lg-12 grid-md-12 grid-sm-12 price-info no-gutter">'+
+					obj.name +' - <span class="price"> $' + obj.price +'</span>'+
+				'</div>'+
+			'</div>'+
+		'</div>'
+
+		i++
+	})
+
+	return htmlContent
 }
 
 
