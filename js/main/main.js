@@ -1,3 +1,5 @@
+let potions;
+
 let onReady = function(){    
     const url = "http://localhost:3000/json/potions.json";
 	fetch(url)
@@ -5,17 +7,12 @@ let onReady = function(){
 		.then(result => {
 
 			//Transformando o result em um Array
-			let potions = Object.keys(result.potions).map(key => result.potions[key])
+			potions = Object.keys(result.potions).map(key => result.potions[key])
 
 			const target = document.querySelector('#content')
-			target.innerHTML = loadContentOnDOM(potions)
+			target.innerHTML = loadContentOnDOM(potions)			
+			enableClickLightbox()
 
-			/*Realizando o loop por cada objeto do Array
-			potions.forEach(potion =>{
-				potion.ingredients.forEach(ingridient =>{
-					console.log(ingridient)
-				})
-			})*/
 		})
 		.catch(err => {
 			// trata se alguma das promises falhar
@@ -27,8 +24,6 @@ let onReady = function(){
 		enableMenu('.menu')
 		toggleClass(btnMobile, 'active')
 	})
-
-	enableClickLightbox()
 }
 
 if(document.readyState !== 'loading'){
@@ -55,7 +50,7 @@ let loadContentOnDOM = function (object){
 		htmlContent+=
 			'<div class="row">'+
 				'<div class="grid-lg-12 grid-md-12 grid-sm-12 no-gutter">'+
-					'<img src="img/products/' + obj.image + '" alt="'+ obj.name +'" class="img-product">'+
+					'<img src="img/products/' + obj.image + '" alt="'+ obj.name +'" class="img-product" id="'+ obj.id +'">'+
 				'</div>'+
 				'<div class="grid-lg-12 grid-md-12 grid-sm-12 price-info no-gutter">'+
 					obj.name +' - <span class="price"> $' + obj.price +'</span>'+
@@ -99,13 +94,14 @@ let enableMenu = function(targetClick){
 let enableClickLightbox = function (){	
 	let images = document.querySelectorAll('.img-product')
 	Array.from(images).forEach(image =>{
-		let idPotion = 2
 
+		let idPotion =  image.getAttribute('id')
 		image.style.cursor = 'pointer'
-		image.setAttribute('id', 'teste')
-		image.addEventListener('click', img =>{
-			openLightbox(idPotion)
+
+		image.addEventListener('click', img =>{				
+			openLightbox(idPotion-1)
 		})
+
 	})
 }
 
@@ -116,6 +112,36 @@ let enableClickLightbox = function (){
 let openLightbox = function(id){
 	let lightbox = document.querySelector('.lightbox')
 	let closeButton = document.querySelector('.close-lightbox')
+	let contentModal = document.querySelector('#content-modal')
+
+	let potion = potions[id]
+	let htmlModalContent = ''
+
+	console.log(potion)
+
+	htmlModalContent += 					
+	'<div class="grid-lg-6 grid-md-6">'+
+		'<img src="img/products/'+ potion.image +'" alt="'+ potion.name +'" class="img-product">'+
+	'</div>'+
+
+	'<div class="grid-lg-5 grid-md-5">'+
+		'<p class="title-potion">' + potion.name + '</p>'+
+		'<p class="use-effect">Use/Effect:</p>'+
+		'<p class="use-effect-desc">' + potion.effect+'</p>'+
+		'<p class="ingredients">Ingredients:</p>'
+		'<ul>'
+			potion.ingredients.forEach(ingridient =>{htmlModalContent += '<li>' + ingridient + '</li>'})
+		htmlModalContent+=
+		'</ul>'+
+		'</p>'+
+
+		'<p class="price-title">Price:</p>'+
+		'<p class="price">' + potion.price +'</p>'+
+
+		'<button class="btn">ADD TO CART</button>'+
+	'</div>'
+
+	contentModal.innerHTML = htmlModalContent
 
 	lightbox.style.display = "block";
 	closeButton.addEventListener('click', () =>{
